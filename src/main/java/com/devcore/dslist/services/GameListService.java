@@ -14,11 +14,11 @@ import com.devcore.dslist.repositories.GameListRepository;
 public class GameListService {
 	
 	@Autowired
-	private GameListRepository gameLisRepository;
+	private GameListRepository gameListRepository;
 
 	@Transactional(readOnly = true)
 	public List<GameListDTO> findAll() {
-		List<GameList> result = gameLisRepository.findAll();
+		List<GameList> result = gameListRepository.findAll();
 		return result.stream().map(x -> new GameListDTO(x)). toList();
 	}
 }
